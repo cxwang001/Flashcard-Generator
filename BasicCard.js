@@ -23,16 +23,16 @@ var askQuestion = function() {
     inquirer.prompt([
       {
         name: "answer1",
-        message: q1.front
+        message: q1.front +"\nAnswer:"
       }, {
         name: "answer2",
-        message: q2.front
+        message: q2.front +"\nAnswer:"
       }, {
         name: "answer3",
-        message: q3.front
+        message: q3.front +"\nAnswer:"
       }, {
         name: "answer4",
-        message: q4.front
+        message: q4.front +"\nAnswer:"
       }
     ]).then(function(answers) {
     	if (answers.answer1 === q1.back) {
@@ -49,21 +49,21 @@ var askQuestion = function() {
         	console.log("Wrong, the answer is " + q2.back);
     }
 
-    if (answers.answer3 === q3.back) {
-        console.log("Correct!");
+    	if (answers.answer3 === q3.back) {
+        	console.log("Correct!");
         	rightAnswer ++;
-    } else {
-        console.log("Wrong, the answer is " + q3.back)
-    }
+    	} else {
+        	console.log("Wrong, the answer is " + q3.back)
+    	}
 
-    if (answers.answer4 === q4.back) {
-        console.log("Correct!");
+    	if (answers.answer4 === q4.back) {
+        	console.log("Correct!");
         	rightAnswer ++;
-    } else {
-        console.log("Wrong, the answer is " + q4.back)
-    }
-    console.log("Overall score is " + rightAnswer);
-    });
+    	} else {
+        	console.log("Wrong, the answer is " + q4.back)
+    	}
+    	console.log("Overall score is " + rightAnswer);
+    	});
 	
 }
 
