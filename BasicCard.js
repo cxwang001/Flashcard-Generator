@@ -7,64 +7,51 @@ function basicCard (front, back) {
     this.back = back;
 };
 
-var q1 = new basicCard ("1. The Chihuahua is a breed of dog believed to originate from what country?", "Mexico");
-var q2 = new basicCard ("2. The first McDonald's restaurant openend in which U.S. state?", "California");
-var q3 = new basicCard ("3. What is the name of the actress who plays Hermione Granger in the Harry Potter series of films?", "Emma Watson");
-var q4 = new basicCard ("4. Which book was famously rejected by 12 publishers before finally being accepted by Bloomsbury?", "Harry Potter");
+//Building an array of objects for all question and answers
+var array=[{
+    "question": "1. The Chihuahua is a breed of dog believed to originate from what country?",
+    "answer": "Mexico"
+},
+{
+    "question": "2. The first McDonald's restaurant openend in which U.S. state?",
+    "answer": "California"
+},
+{
+    "question": "3. What is the name of the actress who plays Hermione Granger in the Harry Potter series of films?",
+    "answer": "Emma Watson"
+},
+{
+    "question": "4. Which book was famously rejected by 12 publishers before finally being accepted by Bloomsbury?",
+    "answer": "Harry Potter"
+}];
 
-console.log(q1);
-var rightAnswer = 0;
+//Declare valables for recursion function
+var counter = 0; //counter for recursion function
+var rightAnswer = 0; //counter for right answers
 
-var askQuestion = function() {
-    // runs inquirer and asks the user a series of questions whose replies are
-    // stored within the variable answers inside of the .then statement
-    inquirer.prompt([
-      {
-        name: "answer1",
-        message: q1.front +"\nAnswer:"
-      }, {
-        name: "answer2",
-        message: q2.front +"\nAnswer:"
-      }, {
-        name: "answer3",
-        message: q3.front +"\nAnswer:"
-      }, {
-        name: "answer4",
-        message: q4.front +"\nAnswer:"
-      }
-    ]).then(function(answers) {
-    	if (answers.answer1 === q1.back) {
-        	console.log("Correct!");
-        	rightAnswer ++;
-    	} else {
-        	console.log("Wrong, the answer is " + q1.back)
-    	}
-
-    	if (answers.answer2 === q2.back) {
-        	console.log("Correct!");
-        	rightAnswer ++;
-    	} else {
-        	console.log("Wrong, the answer is " + q2.back);
-    	}
-
-    	if (answers.answer3 === q3.back) {
-        	console.log("Correct!");
-        	rightAnswer ++;
-    	} else {
-        	console.log("Wrong, the answer is " + q3.back)
-    	}
-
-    	if (answers.answer4 === q4.back) {
-        	console.log("Correct!");
-        	rightAnswer ++;
-    	} else {
-        	console.log("Wrong, the answer is " + q4.back)
-    	}
-    	console.log("Overall score is " + rightAnswer);
-    	});
-	
-}
+function askQuestion() {
+    if (counter <= array.length-1){
+        inquirer.prompt([
+          {
+            type: "input",
+            name: "response",
+            message: array[counter].question +"\nAnswer:"
+          }
+        ]).then(function(answers) {
+                if (answers.response === array[counter].answer){
+                    console.log("You got it right!");
+                    rightAnswer++;
+                } else {
+                    console.log("Wrong answer!!");
+                }
+            counter++;
+            askQuestion();                
+            });
+    }
+    else {
+        console.log("All questions asked");
+    }
+    console.log("You got "+ rightAnswer +" correct!");
+};
 
 askQuestion();
-
-module.exports = BasicCard;
