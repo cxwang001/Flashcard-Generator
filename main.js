@@ -18,4 +18,4 @@ inquirer.prompt([{
 });
 //Looks like the main.js is not working!! I don't know how to call the function from BasicCard.js and ClozeCard.js
 
-//Both BasicCard.js and ClozeCard.js is working
+//Both BasicCard.js and ClozeCard.js is working if call them individually
