@@ -33,7 +33,7 @@ function askQuestionCloze() {
                 if (answers.response === array[counter].cloze){
                     console.log("You got it right!");
                 } else {
-                    console.log("Wrong answer!!"+"The right answer is:" + array[counter].fullText);
+                    console.log("Wrong answer!!"+"\nThe right answer is: " + array[counter].fullText);
                 }
             counter++;
             askQuestionCloze();                
@@ -44,5 +44,5 @@ function askQuestionCloze() {
     }
 };
 
-module.exports = ClozeCard;
+askQuestionCloze();
 

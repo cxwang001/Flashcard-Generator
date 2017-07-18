@@ -54,4 +54,4 @@ function askQuestionBasic() {
     console.log("You got "+ rightAnswer +" correct!");
 };
 
-module.exports = BasicCard;
+askQuestionBasic();
