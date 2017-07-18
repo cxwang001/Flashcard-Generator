@@ -1,7 +1,7 @@
 var inquirer = require("inquirer");
 
-var basicCard = require("./BasicCard.js");
-var ClozeCard = require("./ClozeCard.js");
+// var askQuestionBasic = require("./BasicCard");
+// // var ClozeCard = require("./ClozeCard.js");
 
 inquirer.prompt([{
     type: 'input',

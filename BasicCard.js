@@ -29,7 +29,7 @@ var array=[{
 var counter = 0; //counter for recursion function
 var rightAnswer = 0; //counter for right answers
 
-function askQuestionBasic() {
+var askQuestionBasic = function () {
     if (counter <= array.length-1){
         inquirer.prompt([
           {
@@ -53,5 +53,5 @@ function askQuestionBasic() {
     }
     console.log("You got "+ rightAnswer +" correct!");
 };
-
 askQuestionBasic();
+// askQuestionBasic();
