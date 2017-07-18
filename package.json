@@ -4,7 +4,8 @@
   "description": "",
   "main": "BasicCard.js",
   "dependencies": {
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "inquirer": "^3.2.0"
   },
   "devDependencies": {},
   "scripts": {

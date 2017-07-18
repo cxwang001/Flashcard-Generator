@@ -29,7 +29,7 @@ var array=[{
 var counter = 0; //counter for recursion function
 var rightAnswer = 0; //counter for right answers
 
-function askQuestion() {
+function askQuestionBasic() {
     if (counter <= array.length-1){
         inquirer.prompt([
           {
@@ -45,7 +45,7 @@ function askQuestion() {
                     console.log("Wrong answer!!");
                 }
             counter++;
-            askQuestion();                
+            askQuestionBasic();                
             });
     }
     else {
@@ -54,4 +54,4 @@ function askQuestion() {
     console.log("You got "+ rightAnswer +" correct!");
 };
 
-askQuestion();
+module.exports = BasicCard;
