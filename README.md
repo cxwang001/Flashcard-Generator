@@ -26,39 +26,3 @@ A flash card built this way has three parts:
 
 3. The **partial text**. This is what we get if we remove the **cloze deletion** from the **full text**: _"... was the first president of the United States._
 
-See below for examples as to how your constructor should behave.
-
-## Instructions
-
-* Create a new GitHub repository, named `Flashcard-Generator` or something similar. Clone this to your local drive.
-
-* Create a new file named `BasicCard.js`:
-
-  * This file should define a Node module that exports a constructor for creating basic flashcards, e.g.:
-    `module.exports = BasicCard;`
-
-  * The constructor should accept two arguments: `front` and `back`.
-
-  * The constructed object should have a `front` property that contains the text on the front of the card.
-
-  * The constructed object should have a `back` property that contains the text on the back of the card.
-
-* Create a new file named `ClozeCard.js`:
-
-  * This file should define a Node module that exports a constructor for creating cloze-deletion flashcards, e.g.:
-    `module.exports = ClozeCard;`
-
-  * The constructor should accept two arguments: `text` and `cloze`.
-
-  * The constructed object should have a `cloze` property that contains _only_ the cloze-deleted portion of the text.
-
-  * The constructed object should have a `partial` property that contains _only_ the partial text.
-
-  * The constructed object should have a `fullText` property that contains _only_ the full text.
-
-  * The constructor should throw or log an error when the cloze deletion does _not_ appear in the input text.
-
-  * Use prototypes to attach these methods, wherever possible.
-
-The bulk of this assignment is implementing `ClozeCard`. If you build a robust `ClozeCard` implementation, feel free to try your hand at implementing a front-end, as well.
-
